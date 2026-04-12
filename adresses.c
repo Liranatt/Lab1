@@ -61,7 +61,24 @@ int secondary(int x)
     printf("Pointers and arrays (T1d): ");
 
     /* task 1 d here */
-    
+    // אתחול המצביעים להצביע לתא הראשון במערכים
+    iarray2Ptr = iarray2;
+    carray2Ptr = carray2;
+
+    printf("\n- iarray2 values: ");
+    for(int i = 0; i < 3; i++) {
+        printf("%d ", *(iarray2Ptr + i)); // גישה לערך דרך המצביע
+    }
+
+    printf("\n- carray2 values: ");
+    for(int i = 0; i < 3; i++) {
+        printf("%c ", *(carray2Ptr + i));
+    }
+    printf("\n");
+
+    // מצביע לא מאותחל
+    int *p_uninit;
+    printf("- p_uninit (uninitialized): %p\n", p_uninit);
 
 }
 
@@ -78,7 +95,9 @@ int main(int argc, char **argv)
     
     printf("Command line arg addresses (T1e):\n");
     /* task 1 e here */
-    
+    for (int i = 0; i < argc; i++) {
+        printf("- argv[%d]: address=%p, content=%s\n", i, &argv[i], argv[i]);
+    }
     return 0;
 }
 
